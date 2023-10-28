@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.pokemon_container {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+
+    .paginator_container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_elements {
+        width: 100%;
+        margin-bottom: 12px;
+    
+
+        .button_back {
+            color: rgb(55, 55, 55);
+        }
+    }
+
+    .pokemon_item {
+        width: 100%;
+        padding: 20px;
+        margin-block: 12px;
+        border-radius: 8px;
+        background-color: #99cde6;
+        cursor: pointer;
+    }
+}

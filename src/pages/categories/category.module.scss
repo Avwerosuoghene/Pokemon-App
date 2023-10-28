@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+  }
+
+.category_section_container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #99cde6;
+    padding: 24px;
+
+    .records_container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 30px ;
+    }
+
+
+    .category_element {
+        // width: 200px;
+        // height: 200px;
+        aspect-ratio: 1/1;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        display: flex;
+
+        &:hover {
+            background-color: #99a8e6;
+            color: #fff;
+        }
+    }
+}
