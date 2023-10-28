@@ -66,7 +66,7 @@ const Pokemon = () => {
             }
         } catch (error) {
             setIsLoading(false);
-            console.log(`error in fetching products upload ${error}`);
+            console.log(`error in fetching pokemon data ${error}`);
         }
     }
 
@@ -82,7 +82,6 @@ const Pokemon = () => {
         
         if (value !== "") {
             setFilterStatus(true)
-            console.log('on name search')
             const filteredValue = pokemonStore.data.filter((pokemon: any) => {
                 return pokemon.pokemon.name.toLowerCase().includes(value)
             })
@@ -99,10 +98,8 @@ const Pokemon = () => {
 
     const getPokemonDetails = async (pokemon: any) => {
         try {
-            console.log(pokemon)
             setIsLoading(true);
             const id = HelperService.getNumberFromUrl(pokemon.pokemon.url);
-            console.log(id)
             const apiResponse = await sendRequest(getPokemonInfo, id);
             setIsLoading(false);
             if (apiResponse.isSuccess) {

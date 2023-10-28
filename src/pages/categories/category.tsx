@@ -24,7 +24,6 @@ const Category = () => {
 
   useEffect(() => {
     if (pokemonStore.category.length > 0) {
-      console.log(pokemonStore.category)
       setCategories(pokemonStore.category)
     } else {
       fetchCategories();
@@ -46,11 +45,9 @@ const Category = () => {
       setIsLoading(true);
       const apiResponse = await sendRequest(getCategories);
       setIsLoading(false);
-      console.log(apiResponse)
       if (apiResponse.isSuccess) {
         dispatch(pokemonInfoActions.setCategory({ data: apiResponse.results}));
         setCategories(apiResponse.results)
-        console.log(pokemonCatgories)
       }
     } catch (error) {
       setIsLoading(false);
@@ -75,7 +72,7 @@ const Category = () => {
       }
     } catch (error) {
       setIsLoading(false);
-      console.log(`error in fetching products upload ${error}`);
+      console.log(`error in fetching pokemons ${error}`);
     }
   }
 

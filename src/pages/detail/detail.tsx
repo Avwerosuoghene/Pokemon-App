@@ -25,7 +25,6 @@ const Detail = () => {
         () => {
             if (pokemonStore?.length > 0) {
                 setDetails(pokemonStore)
-                console.log(pokemonStore)
             } else {
                 fetchPokemonDetails()
             }
@@ -34,7 +33,6 @@ const Detail = () => {
 
 
     const setDetails = (details: any) => {
-        console.log(details.abilities)
         setPokemonDetails(details);
     }
 

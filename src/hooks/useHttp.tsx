@@ -8,7 +8,6 @@ const useHttp = () => {
         let message = "";
     
         let asyncResponse;
-        console.log(httpFunction)
           asyncResponse = await httpFunction(payload);
      
     
@@ -16,7 +15,6 @@ const useHttp = () => {
      
     
         const isSuccess = asyncResponse.response.status === 200;
-        console.log(asyncResponse)
         if (isSuccess === true) {
           message = 'Successful';
           const data = asyncResponse.response.data;
@@ -26,10 +24,6 @@ const useHttp = () => {
         }
      
         message = 'Failed';
-        // console.log(asyncResponse.response.data.data[0].message);
-        // message = asyncResponse.response.data.data
-        //   ?asyncResponse.response.data.data[0].message
-        //   : asyncResponse.response.data.message ;
         openSnackBarAction(message, "warning");
         return false;
       };
